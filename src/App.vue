@@ -1,6 +1,6 @@
 <template>
   <form @submit.prevent="onSubmit">
-    <FormField v-for="field in fields" :key="field.name" :field="field" />
+    <FormField v-for="field in fields" :key="field.name" :field="field" :error="errors[field.name]" />
     <p>{{ values }}</p>
     <button type="submit">送出</button>
     <div v-if="success" class="success">success</div>

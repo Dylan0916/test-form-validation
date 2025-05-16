@@ -38,7 +38,5 @@ export function useFormFields() {
     }
   })
 
-  const s = fields[0].value.value
-
   return { fields, values, errors, handleSubmit, validate }
 }

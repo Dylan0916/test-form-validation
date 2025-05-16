@@ -15,14 +15,14 @@
     <template v-else-if="field.type === 'checkbox'">
       <input type="checkbox" v-model="field.value.value" />
     </template>
-    <div v-if="field.errorMessage" class="error">{{ field.errorMessage }}</div>
+    <div v-if="error" class="error">{{ error }}</div>
   </div>
 </template>
 
 <script setup lang="ts">
 import { watchEffect } from 'vue'
 
-const props = defineProps<{ field: any }>()
+const props = defineProps<{ field: any; error: any }>()
 
 watchEffect(() => {
   console.log('== field ==', props.field)
